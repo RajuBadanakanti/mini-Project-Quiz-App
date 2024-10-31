@@ -1,0 +1,33 @@
+.bg-header-container {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.header-webiste-img {
+  height: 55px;
+  width: 75px;
+}
+.logout-button {
+  height: 40px;
+  width: 86px;
+  background-color: transparent;
+  border: 2px solid #afafaf;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'roboto';
+  color: #afafaf;
+  font-weight: 500;
+  padding-top: 11px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  outline: none;
+  cursor: pointer;
+}
