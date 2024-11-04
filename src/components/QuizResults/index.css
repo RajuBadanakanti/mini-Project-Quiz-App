@@ -1,0 +1,158 @@
+/*  DESKTOP VIEW  */
+
+.bg-game-results-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to right,
+    #dbbcc4 9.68%,
+    #f3dfd8 32.98%,
+    #d8bfd0 75.7%,
+    #b7b1d5 99.11%
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.game-results-white-container {
+  min-height: 100vh;
+  width: 85%;
+  background-color: #f8fafc;
+
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Success Container>>>>>>>>>.  */
+.game-result-success-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/quiz-game-congrats-card-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+.game-result-success-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+.game-result-success-trophy {
+  width: 25%;
+}
+.game-result-success-header {
+  font-family: 'roboto';
+  font-size: 32px;
+  color: #334155;
+  margin-top: 40px;
+}
+.game-result-success-result-header {
+  color: #0ea5e9;
+  font-family: 'roboto';
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0px;
+  letter-spacing: 0.6px;
+}
+.quiz-result-status-para {
+  color: #334155;
+  font-family: 'roboto';
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+.quiz-result-attempted-para {
+  width: 60%;
+  color: #334155;
+  font-family: 'roboto';
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  opacity: 1;
+}
+
+/* Report Button  */
+.game-result-report-button {
+  height: 40px;
+  width: 85px;
+  border: none;
+  background-color: #0ea5e9;
+  color: #f8fafc;
+  font-family: 'roboto';
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*  Failure View */
+.game-result-failure-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.game-result-failure-img {
+  width: 60%;
+}
+.game-result-failure-header {
+  font-family: 'roboto';
+  font-size: 24px;
+
+  color: #334155;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+}
+.game-result-failure-result-header {
+  color: #0ea5e9;
+  font-family: 'roboto';
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0px;
+  letter-spacing: 0.6px;
+  margin-bottom: 20px;
+}
+
+.quiz-result-failure-attempted-para {
+  width: 60%;
+  color: #334155;
+  font-family: 'roboto';
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  opacity: 1;
+}

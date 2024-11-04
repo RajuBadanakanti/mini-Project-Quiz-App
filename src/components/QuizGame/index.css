@@ -101,12 +101,13 @@
 
 /* Quiz Questions Container  */
 .quiz-questions-container {
-  width: 80%;
+  width: 84%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-top: 30px;
+  text-align: left;
 }
 .quiz-question {
   color: #334155;
@@ -115,7 +116,7 @@
   font-weight: 500;
 }
 
-/* Options List Container (OL)   */
+/* Options List Container (OL)   
 .quiz-options-list-container {
   width: 100%;
   display: flex;
@@ -131,6 +132,7 @@
   color: #334155;
   font-size: 20px;
 }
+*/
 
 /*  Next-Question-Button  */
 .next-question-button {
@@ -150,4 +152,48 @@
   cursor: pointer;
   align-self: flex-end;
   margin-top: auto;
+}
+
+/* <<<<<<<<< Failure View >>>>>>>  */
+.quiz-game-failure-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-game-failure-img {
+  width: 70%;
+}
+.quiz-game-failure-heading {
+  font-size: 36px;
+  color: #334155;
+  font-family: 'roboto';
+  letter-spacing: 0.6px;
+  font-weight: 500;
+}
+
+.quiz-game-failure-description {
+  color: #64748b;
+  font-family: 'roboto';
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.quiz-game-failure-retry-button {
+  height: 40px;
+  width: 76px;
+  background-color: #0ea5e9;
+  border: none;
+  border-radius: 4px;
+  color: #f8fafc;
+  font-family: 'roboto';
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

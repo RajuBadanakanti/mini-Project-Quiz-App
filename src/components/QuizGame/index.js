@@ -3,7 +3,8 @@ import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
-import QuizGameOptions from '../QuizGameOptions'
+// useless File import QuizGameOptions from '../QuizGameOptions'
+import QuizGameOpts from '../QuizGameOpts'
 import './index.css'
 
 const quizGameStatusConstants = {
@@ -23,10 +24,35 @@ class QuizGame extends Component {
 
   componentDidMount() {
     this.getQuizQuestionsData()
-    // timer >>>>>>>>
     this.timer = setInterval(() => {
       this.setState(prevState => ({seconds: prevState.seconds - 1}))
     }, 1000)
+  }
+
+  updateOptionsByType = (options, optionsType) => {
+    switch (optionsType) {
+      case 'DEFAULT':
+        return options.map(eachOption => ({
+          id: eachOption.id,
+          text: eachOption.text,
+          isCorrect: eachOption.is_correct,
+        }))
+      case 'IMAGE':
+        return options.map(eachOption => ({
+          id: eachOption.id,
+          text: eachOption.text,
+          imageUrl: eachOption.image_url,
+          isCorrect: eachOption.is_correct,
+        }))
+      case 'SINGLE_SELECT':
+        return options.map(eachOption => ({
+          id: eachOption.id,
+          text: eachOption.text,
+          isCorrect: eachOption.is_correct,
+        }))
+      default:
+        return options
+    }
   }
 
   getQuizQuestionsData = async () => {
@@ -49,11 +75,10 @@ class QuizGame extends Component {
         id: eachItem.id,
         optionsType: eachItem.options_type,
         questionText: eachItem.question_text,
-        options: eachItem.options.map(eachOpt => ({
-          id: eachOpt.id,
-          isCorrect: eachOpt.is_correct,
-          text: eachOpt.text,
-        })),
+        options: this.updateOptionsByType(
+          eachItem.options,
+          eachItem.options_type,
+        ),
       }))
 
       console.log(updatedData)
@@ -73,8 +98,8 @@ class QuizGame extends Component {
     const {quizQuestionsList, seconds, questionNo} = this.state
     const totalQuestions = quizQuestionsList.length
     const questionsObj = quizQuestionsList[questionNo - 1]
-    const {questionText, optionsType, options} = questionsObj
-    // console.log(questionsObj)
+    const {questionText} = questionsObj
+    //  const {questionText, optionsType, options} = questionsObj  console.log(questionsObj)
 
     return (
       <div className="quiz-content-container">
@@ -91,17 +116,14 @@ class QuizGame extends Component {
         </div>
         <div className="quiz-questions-container">
           <h1 className="quiz-question">{questionText}</h1>
-          <ol className="quiz-options-list-container">
-            {options.map(eachOpt => (
-              <QuizGameOptions
-                key={eachOpt.id}
-                optionsType={optionsType}
-                optionDetails={eachOpt}
-              />
-            ))}
-          </ol>
+          <QuizGameOpts questionsOptionsData={questionsObj} />
         </div>
-        <button disabled="true" type="button" className="next-question-button">
+        <button
+          disabled="true"
+          type="button"
+          className="next-question-button"
+          onClick={this.onClickBtn}
+        >
           Next Question
         </button>
       </div>
@@ -110,8 +132,19 @@ class QuizGame extends Component {
 
   // FAILURE VIEW >>>>>>>>>>
   renderFailureView = () => (
-    <div>
-      <h1>FAILURE</h1>
+    <div className="quiz-game-failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-assess-failure-img.png"
+        alt="failure view"
+        className="quiz-game-failure-img"
+      />
+      <h1 className="quiz-game-failure-heading">Something went wrong</h1>
+      <p className="quiz-game-failure-description">
+        Our server are busy please try again
+      </p>
+      <button type="button" className="quiz-game-failure-retry-button">
+        Retry
+      </button>
     </div>
   )
 
@@ -137,24 +170,18 @@ class QuizGame extends Component {
     }
   }
 
-  /* my default Data
-  stopTimer = () => {
-    const {quizQuestionsList, questionNo} = this.state
-
-    if (questionNo < quizQuestionsList.length) {
-      this.setState(prevState => ({
-        questionNo: prevState.questionNo + 1,
-        seconds: 15,
-      }))
-    }
+  timeLimitIsOver = () => {
+    //  HOW TO MOVE NEXT QUESTION WHEN TIMER IS SHOWN 0  //
+    //  **************************************************************************************** //
   }
-   */
 
   render() {
     const {seconds} = this.state
-
     if (seconds === 0) {
+      this.timeLimitIsOver()
       clearInterval(this.timer)
+      //  HOW TO MOVE NEXT QUESTION WHEN TIMER IS SHOWN 0  //
+      //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  //
     }
 
     return (
@@ -164,9 +191,6 @@ class QuizGame extends Component {
           <div className="quiz-game-white-container">
             {this.renderAllViews()}
           </div>
-          <button type="button" onClick={this.stopTimer}>
-            stop
-          </button>
         </div>
       </>
     )
@@ -174,5 +198,3 @@ class QuizGame extends Component {
 }
 
 export default QuizGame
-
-/* ... */

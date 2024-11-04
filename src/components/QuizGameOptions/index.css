@@ -1,6 +1,7 @@
-/* DESKTOP DEVICE  */
+/*{     DESKTOP DEVICE  
 
 /* Default  */
+/* 
 .default-options-item-container {
   height: 65px;
   width: 44%;
@@ -48,6 +49,7 @@
 }
 
 /* SINGLE_SELECT  */
+/*
 .single-select-options-item-container {
   width: 80%;
   display: flex;
@@ -69,3 +71,4 @@
   font-size: 20px;
   font-family: 'roboto';
 }
+ */
