@@ -154,6 +154,11 @@
   margin-top: auto;
 }
 
+.next-question-button-enable {
+  background-color: #0ea5e9;
+  color: #f8fafc;
+}
+
 /* <<<<<<<<< Failure View >>>>>>>  */
 .quiz-game-failure-container {
   width: 75%;

@@ -140,6 +140,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  font-size: 0;
 }
 .quiz-option-images {
   width: 90%;
@@ -191,6 +192,7 @@
   color: #334155;
   font-size: 20px;
   font-weight: 400;
+  cursor: pointer;
 }
 .select-options-ans-img {
   height: 30px;

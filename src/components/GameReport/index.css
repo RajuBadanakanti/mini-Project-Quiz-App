@@ -1,0 +1,98 @@
+.bg-game-report-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to right,
+    #dbbcc4 9.68%,
+    #f3dfd8 32.98%,
+    #d8bfd0 75.7%,
+    #b7b1d5 99.11%
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.game-report-white-container {
+  min-height: 100vh;
+  width: 85%;
+  background-color: #f8fafc;
+  border: none;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+
+  padding-bottom: 30px;
+}
+
+/*  upper  content */
+.game-score-report-container {
+  height: 35vh;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.score-container {
+  height: 166px;
+  width: 166px;
+  background-color: transparent;
+  border: 6px solid #0ea5e9;
+  border-radius: 80px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.game-report-score {
+  font-family: 'roboto';
+  font-size: 32px;
+  font-weight: 600;
+  color: #475569;
+}
+.game-report-score-span-by {
+  font-family: 'roboto';
+  font-size: 48px;
+  font-weight: 600;
+  color: #475569;
+}
+.game-report-score-span {
+  font-family: 'roboto';
+  font-size: 48px;
+  font-weight: 700;
+  color: #0ea5e9;
+}
+.score-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.score-results-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.score-status-icons {
+  height: 16px;
+  width: 16px;
+  margin-right: 20px;
+}
